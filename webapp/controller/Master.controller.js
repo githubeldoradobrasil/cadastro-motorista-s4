@@ -687,9 +687,9 @@ sap.ui.define([
 			// } else
 
 			if (this.getOwnerComponent()._oManifest != undefined) {
-				const sBtpUrHTML5lPath = this.getOwnerComponent()._oManifest._oBaseUri._string;
+				const sBtpUrHTML5lPath = this.getOwnerComponent()._oManifest._oBaseUri.toString();
 
-				if (this.getOwnerComponent()._oManifest._oBaseUri._string.length > 1) {
+				if (this.getOwnerComponent()._oManifest._oBaseUri.toString().length > 1) {
 					oFileUploader.setUploadUrl(sBtpUrHTML5lPath + sServicePath);
 				}
 			}
