@@ -26,7 +26,7 @@ sap.ui.define([
 
 	var EdmType = exportLibrary.EdmType;
 
-	return BaseController.extend("cadastromotorista_fornecedor.controller.Master", {
+	return BaseController.extend("cadastromotoristas4hana.controller.Master", {
 
 		formatter: formatter,
 
@@ -156,7 +156,7 @@ sap.ui.define([
 			if (!this._pViewSettingsDialog) {
 				this._pViewSettingsDialog = Fragment.load({
 					id: this.getView().getId(),
-					name: "cadastromotorista_fornecedor.view.ViewSettingsDialog",
+					name: "cadastromotoristas4hana.view.ViewSettingsDialog",
 					controller: this
 				}).then(function (oDialog) {
 					// connect dialog to the root view of this component (models, lifecycle)
@@ -263,7 +263,7 @@ sap.ui.define([
 
 				this._pViewCreateDialog = Fragment.load({
 					id: this.getView().getId(),
-					name: "cadastromotorista_fornecedor.view.CreateEntry",
+					name: "cadastromotoristas4hana.view.CreateEntry",
 					controller: this
 				}).then(function (oDialog) {
 					// connect dialog to the root view of this component (models, lifecycle)
@@ -381,7 +381,7 @@ sap.ui.define([
 			if (!this._oDialogSearchDriver) {
 				this._oDialogSearchDriver = Fragment.load({
 					id: oView.getId(),
-					name: "cadastromotorista_fornecedor.view.DriverSelect",
+					name: "cadastromotoristas4hana.view.DriverSelect",
 					controller: this
 				}).then(function (oValueHelpSearchDriver) {
 					oView.addDependent(oValueHelpSearchDriver)
@@ -638,7 +638,7 @@ sap.ui.define([
 			if (!this._oDialogDriversUpload) {
 				this._oDialogDriversUpload = Fragment.load({
 					id: oView.getId(),
-					name: "cadastromotorista_fornecedor.view.DriversUpload",
+					name: "cadastromotoristas4hana.view.DriversUpload",
 					controller: this
 				}).then(function (oDialogDriversUpload) {
 					oView.addDependent(oDialogDriversUpload)

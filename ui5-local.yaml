@@ -1,6 +1,6 @@
 specVersion: "3.1"
 metadata:
-  name: cadastromotorista_fornecedor
+  name: cadastromotoristas4hana
 type: application
 framework:
   name: SAPUI5
@@ -38,5 +38,5 @@ server:
     - name: fiori-tools-preview
       afterMiddleware: fiori-tools-appreload
       configuration:
-        component: cadastromotorista_fornecedor
+        component: cadastromotoristas4hana
         ui5Theme: sap_horizon

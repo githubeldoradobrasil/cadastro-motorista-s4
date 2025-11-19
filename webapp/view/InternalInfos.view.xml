@@ -1,5 +1,5 @@
 <mvc:View
-	controllerName="cadastromotorista_fornecedor.controller.Detail"
+	controllerName="cadastromotoristas4hana.controller.Detail"
 	xmlns="sap.m"
 	xmlns:mvc="sap.ui.core.mvc"
 	xmlns:f="sap.ui.layout.form"

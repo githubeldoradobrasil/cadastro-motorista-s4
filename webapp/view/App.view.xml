@@ -1,4 +1,4 @@
-<mvc:View controllerName="cadastromotorista_fornecedor.controller.App"
+<mvc:View controllerName="cadastromotoristas4hana.controller.App"
     xmlns:html="http://www.w3.org/1999/xhtml"
 	displayBlock="true"
 	height="100%"

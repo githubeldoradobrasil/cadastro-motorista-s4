@@ -1,5 +1,5 @@
 {
-  "xsappname": "cadastromotoristafornecedor",
+  "xsappname": "cadastromotoristas4hana",
   "tenant-mode": "dedicated",
   "description": "Security profile of called application",
   "scopes": [],

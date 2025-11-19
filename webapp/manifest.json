@@ -1,7 +1,7 @@
 {
   "_version": "1.65.0",
   "sap.app": {
-    "id": "cadastromotorista_fornecedor",
+    "id": "cadastromotoristas4hana",
     "type": "application",
     "i18n": "i18n/i18n.properties",
     "applicationVersion": {
@@ -38,10 +38,10 @@
             "additionalParameters": "allowed"
           }
         },
-        "cadastromotorista_fornecedor-display": {
-          "semanticObject": "cadastromotorista_fornecedor",
+        "cadastromotoristas4hana-display": {
+          "semanticObject": "cadastromotoristas4hana",
           "action": "display",
-          "title": "{{cadastromotorista_fornecedor-display.flpTitle}}",
+          "title": "{{cadastromotoristas4hana-display.flpTitle}}",
           "signature": {
             "parameters": {},
             "additionalParameters": "allowed"
@@ -89,7 +89,7 @@
       "i18n": {
         "type": "sap.ui.model.resource.ResourceModel",
         "settings": {
-          "bundleName": "cadastromotorista_fornecedor.i18n.i18n"
+          "bundleName": "cadastromotoristas4hana.i18n.i18n"
         }
       },
       "": {
@@ -117,7 +117,7 @@
         "routerClass": "sap.f.routing.Router",
         "type": "View",
         "viewType": "XML",
-        "path": "cadastromotorista_fornecedor.view",
+        "path": "cadastromotoristas4hana.view",
         "controlId": "layout",
         "controlAggregation": "beginColumnPages",
         "bypassed": {
@@ -201,7 +201,7 @@
       }
     },
     "rootView": {
-      "viewName": "cadastromotorista_fornecedor.view.App",
+      "viewName": "cadastromotoristas4hana.view.App",
       "type": "XML",
       "async": true,
       "id": "App"
@@ -209,6 +209,6 @@
   },
   "sap.cloud": {
     "public": true,
-    "service": "cadastromotoristafornecedor"
+    "service": "cadastromotoristas4hana"
   }
 }

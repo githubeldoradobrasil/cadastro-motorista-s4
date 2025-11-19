@@ -1,4 +1,4 @@
-<mvc:View controllerName="cadastromotorista_fornecedor.controller.Detail"
+<mvc:View controllerName="cadastromotoristas4hana.controller.Detail"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns:upload="sap.m.upload"
 	displayBlock="true"
