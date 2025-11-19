@@ -1,0 +1,119 @@
+<mvc:View
+	controllerName="eldorado.cadastromotorista.controller.Detail"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:core="sap.ui.core"
+	afterRendering="onAfterDocumentsRendering">
+	<VBox class="sapUiSmallMargin">
+    <f:SimpleForm id="SimpleFormDocumentsDriverEditInfo"
+			editable="false"
+			layout="ResponsiveGridLayout"
+			title="{i18n>documentosInfo}"
+			labelSpanL="4"
+            adjustLabelSpan="false"
+			labelSpanM="4"
+			emptySpanL="1"
+			emptySpanM="1"
+			columnsL="1"
+			columnsM="1"
+            singleContainerFullSize="false">
+			<f:content>
+				<Label text="{i18n>Rg}" required="true"/> 
+				<MaskInput value="{Rg}" mask="99.999.999-9" placeholderSymbol="_" placeholder="Digite o numero do Rg" showClearIcon="true" id="inputRg" liveChange="handleChange" />
+				<Label text="{i18n>DataEmissaoRg}"/>
+				<DatePicker liveChange="handleChange"
+					value="{
+						'path':'DataEmissaoRg',
+						'type':'sap.ui.model.type.Date',
+						'formatOptions': {
+							UTC: true,
+							'calendarType': 'Gregorian',
+							'pattern': 'dd/MM/y'
+						}
+					}"
+					secondaryCalendarType="Gregorian"
+					change="handleChange"
+					class="sapUiSmallMarginBottom"/>
+				<Label text="{i18n>OrgaoExpeditorRg}"/>
+				<Input value="{OrgaoExpedidorRg}" maxLength="8" id="inputOrgaoExpedidorRg" liveChange="handleChange"/>
+				<Label text="{i18n>EstadoEmissorRg}"/>
+				<Input value="{EstadoEmissorRg}" maxLength="3" id="inputEstadoEmissorRg" liveChange="handleChange"/>
+                <Label text="{i18n>Cnh}" required="true"/>
+				<Input value="{Cnh}" maxLength="12" id="inputCnh" required="true" liveChange="handleChange"/>
+				<Label text="{i18n>DataValidadeCnh}" required="true" />
+				<DatePicker liveChange="handleChange"   id="inputDataValidadeCnh"
+					value="{
+						'path':'DataValidadeCnh',
+						'type':'sap.ui.model.type.Date',
+						'formatOptions': {
+							UTC: true,
+							'calendarType': 'Gregorian',
+							'pattern': 'dd/MM/y'
+						}
+					}"
+					secondaryCalendarType="Gregorian"
+					change="handleDateChange"
+					class="sapUiSmallMarginBottom"/>
+				<Label text="{i18n>DtPrimeiraCnh}"/>
+				<DatePicker liveChange="handleChange" id="inputDt1cnh"
+					value="{
+						'path':'Dt1cnh',
+						'type':'sap.ui.model.type.Date',
+						'formatOptions': {
+							UTC: true,
+							'calendarType': 'Gregorian',
+							'pattern': 'dd/MM/y'
+						}
+					}"
+					secondaryCalendarType="Gregorian"
+					change="handleDateChange"
+					class="sapUiSmallMarginBottom"/>
+				<Label text="{i18n>CategoriaCnh}" required="true"/>
+				<Input value="{CategoriaCnh}" maxLength="3" id="inputCategoriaCnh" liveChange="handleChange"/>
+				<Label text="{i18n>DataEmissaoCnh}" required="true"/>
+				<DatePicker liveChange="handleChange" id="inputDataEmissaoCnh"
+					value="{
+						'path':'DataEmissaoCnh',
+						'type':'sap.ui.model.type.Date',
+						'formatOptions': {
+							UTC: true,
+							'calendarType': 'Gregorian',
+							'pattern': 'dd/MM/y'
+						}
+					}"
+					secondaryCalendarType="Gregorian"
+					change="handleDateChange"
+					class="sapUiSmallMarginBottom"/>
+				<Label text="{i18n>CartaoRepom}"/>
+				<Input value="{CartaoRepom}" maxLength="30" id="inputCartaoRepom" liveChange="handleChange"/>
+				<Label text="{i18n>PassaporteOuRne}"/>
+				<Input value="{PassaporteRne}" maxLength="60" id="inputPassaporteRne" liveChange="handleChange"/>
+				<Label text="{i18n>PaisEmissor}"/>
+				<Input value="{PaisEmissor}" maxLength="50" id="inputPaisEmissor" liveChange="handleChange"/>
+				<CheckBox  id="checkboxEstrangeiro" text="{i18n>Estrangeiro}" selected="{path: 'Estrangeiro', formatter: '.formatter.isEstrangeiro' }" editable="true" select="onSelectEstrangeiro"/>
+				<Label text="{i18n>TpDocEstrangeiro}"/>
+				<ComboBox id="cbTipoDocumentoEstrangeiro" change="onComboBoxChange"
+					items="{
+					path: '/SH_TipoDocEstrangeiroSet'
+				}">
+				<core:Item key="{Id}" text="{Descricao}" />
+				</ComboBox>
+				<Label text="{i18n>ValidadePassaporte}"/>
+				<DatePicker liveChange="handleChange" id="inputValidadePassaporteRne"
+					value="{
+						'path':'ValidadePassaporteRne',
+						'type':'sap.ui.model.type.Date',
+						'formatOptions': {
+							UTC: true,
+							'calendarType': 'Gregorian',
+							'pattern': 'dd/MM/y'
+						}
+					}"
+					secondaryCalendarType="Gregorian"
+					change="handleDateChange"
+					class="sapUiSmallMarginBottom"/>
+			</f:content>
+		</f:SimpleForm>
+    </VBox>
+</mvc:View>

@@ -1,0 +1,21 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<Dialog title="Cadastrar Motorista" class="sapUiPopupWithPadding" contentWidth="200px" id="createDialog" resizable="true" draggable="true" >
+		<Label id="_IDGenLabel1" text="Cpf do Motorista" required="true"/>
+		<MaskInput mask="999.999.999-99" placeholderSymbol="_" placeholder="Digite o numero do CPF" id="_CpfInput"  width="100%" value="{CreateEntry>/Cpf}"/>
+	
+		<!-- <Input id="_CpfInput" showSuggestion="true" width="100%" showValueHelp="false" valueHelpRequest="onValueHelpRequestDriver" required="true" maxLength="11" textFormatter=".formatter.cpfMask" 
+			 value="{CreateEntry>/Cpf}">
+		</Input> -->
+        <!-- <Label id="_IDGenLabel2" text="Nome do Motorista" required="false"/>
+		<Input id="_NomeInput" showSuggestion="true" width="100%" showValueHelp="false"  required="false" type="Text"
+			 value="{CreateEntry>/Nome}">
+		</Input> -->
+		<beginButton>
+			<Button text="Salvar" press="onCreateEntry" visible="true" type="Emphasized"/>
+		</beginButton>
+		<endButton>
+			<Button id="_IDGenButton2" text="Cancelar" press="onCloseDialogCreate" visible="true"/>
+		</endButton>
+		
+	</Dialog>
+</core:FragmentDefinition>

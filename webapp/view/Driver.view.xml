@@ -1,0 +1,74 @@
+<mvc:View
+	controllerName="eldorado.cadastromotorista.controller.Detail"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:core="sap.ui.core"
+	afterRendering="onAfterDocumentsRendering">
+	<VBox>
+		<f:SimpleForm id="SimpleFormDriverInfo"
+			editable="false"
+			layout="ResponsiveGridLayout"
+			title="{i18n>detailDriverTitle}"
+			labelSpanL="6"
+			labelSpanM="4"
+			emptySpanL="0"
+			emptySpanM="0"
+			columnsL="4"
+			columnsM="2">
+			<f:content>
+				
+				<core:Title text="{i18n>pessoalInfo}"/>
+				<Label text="{i18n>Nome}"/>
+				<Text text="{Nome}" emptyIndicatorMode="Auto"/>
+				<Label text="{i18n>NomeDaMae}"/>
+				<Text text="{NomeMae}" emptyIndicatorMode="Auto"/>
+				<Label text="{i18n>DataNascimento}" />
+				<Text text="{ path:'DataNasc',
+							  type:'sap.ui.model.type.Date',
+							  formatOptions: {
+							    	UTC: true,
+									calendarType: 'Gregorian',
+									pattern: 'dd/MM/y' }
+						}" emptyIndicatorMode="Auto"/>
+			 	<Label text="{i18n>Genero}" />
+				<Text text="{path: 'Genero', formatter: '.formatter.generoMask'}" emptyIndicatorMode="Auto"/>
+				<core:Title text="{i18n>enderecoInfo}"/>
+				<Label text="{i18n>Rua}"/>
+				<Text text="{Rua}" emptyIndicatorMode="Auto"/>
+				<Label text="{i18n>Numero}"/>
+				<Text text="{Numero}" emptyIndicatorMode="Auto"/>
+				<Label text="{i18n>Complemento}"/>
+				<Text text="{Complemento}" emptyIndicatorMode="Auto"/>
+				<Label text="{i18n>Bairro}"/>
+				<Text text="{Bairro}" emptyIndicatorMode="Auto"/>
+				<Label text="{i18n>Estado}"/>
+				<Text id="IdEstado" emptyIndicatorMode="Auto"/>				
+				<Label text="{i18n>Cidade}"/>
+				<Text text="{Cidade}" emptyIndicatorMode="Auto"/>
+				<Label text="{i18n>Cep}"/>
+				<Text text="{Cep}" emptyIndicatorMode="Auto"/>
+				<core:Title text="{i18n>contatosInfo}"/>				
+				<Label text="{i18n>Telefone}"/>
+				<Link text="{Fone}" />
+				<Label text="{i18n>Celular}"/>
+				<Link text="{path: 'Celular'}"/>
+				<Label text="{i18n>CelularVeiculo}"/>
+				<Link text="{path: 'CelularVeiculo'}"/>
+				<core:Title text="{i18n>outrasInfo}"/>
+				<Label text="{i18n>Qualificacao}"/>
+				<Text id="IdQualificacao" text=""/>
+				<Label text="{i18n>Area}"/>
+				<Text id="IdArea" text=""/>
+				<Label text="{i18n>Funcao}"/>
+				<Text id="IdFuncao" text=""/>
+				<Label text="{i18n>Motivacao}"/>
+				<Text id="IdMotivacao" text=""/>
+				<Label text="{i18n>Restricao}" />
+				<Text text="{path: 'Restricao', formatter: '.formatter.isEtrangeiro' }"/>
+				<Label text="{i18n>Motivo}"/>
+				<Text text="{Motivo}" />				
+			</f:content>
+		</f:SimpleForm>
+	</VBox>
+</mvc:View>

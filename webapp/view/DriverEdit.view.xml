@@ -1,0 +1,121 @@
+<mvc:View
+	controllerName="eldorado.cadastromotorista.controller.Detail"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:core="sap.ui.core"
+	afterRendering="onAfterDocumentsRendering">
+	<VBox id="vBox">
+		<f:SimpleForm id="SimpleFormDriverEdit"
+			editable="false"
+			layout="ColumnLayout"
+			title="{i18n>detailDriverTitle}"
+			labelSpanL="6"
+			labelSpanM="4"
+			emptySpanL="0"
+			emptySpanM="0"
+			columnsL="4"
+			columnsM="2">
+			<f:content>
+				<core:Title text="{i18n>pessoalInfo}"/>
+				<Label text="{i18n>Nome}"/>
+				<Input value="{Nome}" maxLength="80" required="true" id="inputNome" liveChange="handleChange"/>
+				<Label text="{i18n>NomeDaMae}"/>
+				<Input value="{NomeMae}" maxLength="80" id="inputNomeMae" liveChange="handleChange"/>
+				<Label text="{i18n>DataNascimento}" required="true"/>
+				<DatePicker id="inputDataNasc" liveChange="handleChange"
+					value="{
+						'path':'DataNasc',
+						'type':'sap.ui.model.type.Date',
+						'formatOptions': {
+							UTC: true,
+							'calendarType': 'Gregorian',
+							'pattern': 'dd/MM/y'
+						}
+					}"
+					secondaryCalendarType="Gregorian"
+					change="handleDateChange"
+					class="sapUiSmallMarginBottom"/>
+			 	<Label text="{i18n>Genero}" required="true"/>
+				<Select selectedKey="{Genero}" id="inputGenero" forceSelection="true">
+					<items>
+						<core:Item text="SELECIONE" key=""/>
+						<core:Item text="FEMININO" key="2"/>
+						<core:Item text="MASCULINO" key="1"/>
+					</items>
+				</Select>
+				
+				<core:Title text="{i18n>enderecoInfo}"/>
+				<Label text="{i18n>Rua}"/>
+				<Input value="{Rua}" type="Text" maxLength="30" id="inputRua" liveChange="handleChange"/>
+				<Label text="{i18n>Numero}"/>
+				<Input value="{Numero}" type="Number" maxLength="10" id="inputNumero" liveChange="handleChange"/>
+				<Label text="{i18n>Complemento}" />
+				<Input value="{Complemento}" type="Text" maxLength="6" id="inputComplmento" liveChange="handleChange"/>
+				<Label text="{i18n>Bairro}"/>
+				<Input value="{Bairro}" type="Text" maxLength="25" id="inputBairro" liveChange="handleChange"/>
+				<Label text="{i18n>Estado}" required="true"/>
+				<ComboBox id="cbEstado"  change="onComboBoxChange"
+					items="{
+					path: '/SH_EstadosSet'
+				}">
+				<core:Item key="{Estado}" text="{Descricao}"  />
+				</ComboBox>				
+				<Label text="{i18n>Cidade}" required="true"/>
+				<ComboBox id="cbCidades" selectedKey="{DomicCode}" value="{Cidade}" change="onComboBoxChange" modelContextChange="onLoadCity"
+					items="{
+					path: '/SH_CidadesSet'
+				}">
+				<core:Item key="{Taxjurcode}" text="{Text}"/>
+				</ComboBox>
+				<Label text="{i18n>Cep}" required="true"/>
+				<MaskInput value="{path: 'Cep', type : 'sap.ui.model.type.String' }" mask="99999-999" placeholderSymbol="_" placeholder="Digite o CEP" showClearIcon="true" id="inputCep" liveChange="handleChange" />				
+				<core:Title text="{i18n>contatosInfo}"/>
+				<Label text="{i18n>Email}" required="true"/>
+				<Input value="{Email}"  maxLength="241" id="inputEmail" liveChange="handleChange"/>
+				<Label text="{i18n>Telefone}" required="true"/>
+				<MaskInput value="{Fone}" mask="(99) 99999-9999" placeholderSymbol="_" placeholder="Digite o numero do telefone" showClearIcon="true" id="inputFone" liveChange="handleChange" valueState="None" />
+				<Label text="{i18n>Celular}"/>
+				<MaskInput value="{Celular}" mask="(99) 99999-9999" placeholderSymbol="_" placeholder="Digite celular" showClearIcon="true" id="inputCelular" liveChange="handleChange" />
+				<Label text="{i18n>CelularVeiculo}"/>
+				<MaskInput value="{CelularVeiculo}" mask="(99) 99999-9999" placeholderSymbol="_" placeholder="Digite celular do veiculo" showClearIcon="true" id="inputCelularVeiculo" liveChange="handleChange" />
+				
+				<core:Title text="{i18n>outrasInfo}"/>
+				<Label text="{i18n>Qualificacao}" required="true"/>
+				<ComboBox id="cbQualificacao"  change="onComboBoxChange"
+					items="{
+					path: '/SH_QualificacaoSet'
+				}">
+				<core:Item key="{Id}" text="{Descricao}"/>
+				
+				</ComboBox>
+				<Label text="{i18n>Area}" required="true"/>
+				<ComboBox id="cbArea" change="onComboBoxChange"
+					items="{
+					path: '/SH_AreaSet'
+				}">
+				<core:Item key="{Id}" text="{Descricao}" />
+				</ComboBox>
+				<Label text="{i18n>Funcao}" required="true"/>
+				<ComboBox id="cbFuncao" change="onComboBoxChange"
+					items="{
+					path: '/SH_FuncaoSet'
+				}">
+				<core:Item key="{Id}" text="{Descricao}" />
+				</ComboBox>
+				<Label text="{i18n>Motivacao}" required="true"/>
+				<ComboBox id="cbMotivacao" change="onComboBoxChange"
+					items="{
+					path: '/SH_MotivacaoSet'
+					
+				}">
+				<core:Item key="{Id}" text="{Descricao}" />
+				</ComboBox>		
+				
+				<Label text="{i18n>Motivo}" />
+				<Input value="{Motivo}" id="inputMotivo" liveChange="handleChange" maxLength="100" enabled="{detailView>/enableInternalInformation}"/>
+				<CheckBox text="{i18n>Restricao}" selected="{Restricao}" enabled="{detailView>/enableInternalInformation}"/>
+			</f:content>
+		</f:SimpleForm>
+	</VBox>
+</mvc:View>

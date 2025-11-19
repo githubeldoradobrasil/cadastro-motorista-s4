@@ -1,0 +1,87 @@
+<mvc:View
+	controllerName="eldorado.cadastromotorista.controller.Detail"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:core="sap.ui.core"
+	afterRendering="onAfterDocumentsRendering">
+	<VBox class="sapUiSmallMargin">
+    <f:SimpleForm id="SimpleFormDocumentsDriverInfo"
+			editable="false"
+			layout="ResponsiveGridLayout"
+			title="{i18n>documentosInfo}"
+			labelSpanL="4"
+            adjustLabelSpan="false"
+			labelSpanM="4"
+			emptySpanL="1"
+			emptySpanM="1"
+			columnsL="1"
+			columnsM="1"
+            singleContainerFullSize="false">
+			<f:content>
+                <Label text="{i18n>Cpf}"/>
+				<Text text="{path: 'Cpf', formatter: '.formatter.cpfMask'}" emptyIndicatorMode="Auto"/>
+				<Label text="{i18n>Rg}" />
+				<Text text="{path: 'Rg', formatter: '.formatter.rgMask', formatOptions: { style: 'medium' }}" emptyIndicatorMode="Auto"/>
+				<Label text="{i18n>DataEmissaoRg}"/>
+				<Text text="{ path:'DataEmissaoRg',
+							  type:'sap.ui.model.type.Date',
+							  formatOptions: {
+							  UTC: true,
+							  calendarType: 'Gregorian',
+						      pattern: 'dd/MM/y' }
+						}" emptyIndicatorMode="Auto"/>
+				<Label text="{i18n>OrgaoExpeditorRg}"/>
+				<Text text="{OrgaoExpedidorRg}" emptyIndicatorMode="Auto"/>
+				<Label text="{i18n>EstadoEmissorRg}" />
+				<Text text="{EstadoEmissorRg}" emptyIndicatorMode="Auto"/>
+                <Label text="{i18n>Cnh}"/>
+				<Text text="{Cnh}" emptyIndicatorMode="Auto"/>
+				<Label text="{i18n>DataValidadeCnh}"/>
+				<Text text="{ path:'DataValidadeCnh',
+							  type:'sap.ui.model.type.Date',
+							  formatOptions: {
+							  UTC: true,
+							  calendarType: 'Gregorian',
+						      pattern: 'dd/MM/y' }
+						}" emptyIndicatorMode="Auto"/>
+				<Label text="{i18n>DtPrimeiraCnh}"/>
+				<Text text="{ path:'Dt1cnh',
+							  type:'sap.ui.model.type.Date',
+							  formatOptions: {
+							  UTC: true,
+							  calendarType: 'Gregorian',
+						      pattern: 'dd/MM/y' }
+				}" emptyIndicatorMode="Auto"/>
+				<Label text="{i18n>CategoriaCnh}"/>
+				<Text text="{CategoriaCnh}" emptyIndicatorMode="Auto"/>
+				<Label text="{i18n>DataEmissaoCnh}"/>
+				<Text text="{ path:'DataEmissaoCnh',
+							  type:'sap.ui.model.type.Date',
+							  formatOptions: {
+							  UTC: true,
+							  calendarType: 'Gregorian',
+						      pattern: 'dd/MM/y' }
+						}" emptyIndicatorMode="Auto"/>
+				<Label text="{i18n>CartaoRepom}"/>
+				<Text text="{CartaoRepom}" emptyIndicatorMode="Auto"/>
+				<Label text="{i18n>PassaporteOuRne}"/>
+				<Text text="{PassaporteRne}" emptyIndicatorMode="Auto"/>
+				<Label text="{i18n>PaisEmissor}"/>
+				<Text text="{PaisEmissor}" emptyIndicatorMode="Auto"/>
+				<Label text="{i18n>Estrangeiro}"/>
+				<Text text="{=${Estrangeiro} ? 'Sim' : 'Não' }"/>
+				<Label text="{i18n>TpDocEstrangeiro}"/>
+				<Text id="IdTipoDocumentoEstrangeiro" text="" emptyIndicatorMode="Auto"/>			
+				<Label text="{i18n>ValidadePassaporte}"/>
+				<Text text="{ path:'ValidadePassaporteRne',
+							  type:'sap.ui.model.type.Date',
+							  formatOptions: {
+							  UTC: true,
+							  calendarType: 'Gregorian',
+						      pattern: 'dd/MM/y' }
+						}" emptyIndicatorMode="Auto"/>
+			</f:content>
+		</f:SimpleForm>
+    </VBox>
+</mvc:View>
