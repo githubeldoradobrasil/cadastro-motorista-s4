@@ -4,7 +4,7 @@ sap.ui.define([
 ], function (Controller, History) {
 	"use strict";
 
-	return Controller.extend("eldorado.cadastromotorista.controller.BaseController", {
+	return Controller.extend("cadastromotorista_fornecedor.controller.BaseController", {
 		/**
 		 * Convenience method for accessing the router in every controller of the application.
 		 * @public

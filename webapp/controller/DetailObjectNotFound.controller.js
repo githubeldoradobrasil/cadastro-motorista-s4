@@ -3,5 +3,5 @@ sap.ui.define([
 ], function (BaseController) {
 	"use strict";
 
-	return BaseController.extend("eldorado.cadastromotorista.controller.DetailObjectNotFound", {});
+	return BaseController.extend("cadastromotorista_fornecedor.controller.DetailObjectNotFound", {});
 });

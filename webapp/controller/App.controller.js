@@ -5,7 +5,7 @@ sap.ui.define([
   function (BaseController, JSONModel) {
     "use strict";
 
-    return BaseController.extend("eldorado.cadastromotorista.controller.App", {
+    return BaseController.extend("cadastromotorista_fornecedor.controller.App", {
       onInit: function () {
         this.getView().setModel(this.getOwnerComponent().getModel())
         var oViewModel,

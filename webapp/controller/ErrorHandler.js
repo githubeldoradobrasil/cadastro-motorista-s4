@@ -5,7 +5,7 @@ sap.ui.define([
 ], function (UI5Object, MessageBox, BaseController) {
 	"use strict";
 
-	return UI5Object.extend("eldorado.cadastromotorista.controller.ErrorHandler", {
+	return UI5Object.extend("cadastromotorista_fornecedor.controller.ErrorHandler", {
 
 		/**
 		 * Handles application errors by automatically attaching to the model events and displaying errors when needed.

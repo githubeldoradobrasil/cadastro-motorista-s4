@@ -1,7 +1,7 @@
 {
   "_version": "1.65.0",
   "sap.app": {
-    "id": "eldorado.cadastromotorista",
+    "id": "cadastromotorista_fornecedor",
     "type": "application",
     "i18n": "i18n/i18n.properties",
     "applicationVersion": {
@@ -89,7 +89,7 @@
       "i18n": {
         "type": "sap.ui.model.resource.ResourceModel",
         "settings": {
-          "bundleName": "eldorado.cadastromotorista.i18n.i18n"
+          "bundleName": "cadastromotorista_fornecedor.i18n.i18n"
         }
       },
       "": {
@@ -117,7 +117,7 @@
         "routerClass": "sap.f.routing.Router",
         "type": "View",
         "viewType": "XML",
-        "path": "eldorado.cadastromotorista.view",
+        "path": "cadastromotorista_fornecedor.view",
         "controlId": "layout",
         "controlAggregation": "beginColumnPages",
         "bypassed": {
@@ -201,7 +201,7 @@
       }
     },
     "rootView": {
-      "viewName": "eldorado.cadastromotorista.view.App",
+      "viewName": "cadastromotorista_fornecedor.view.App",
       "type": "XML",
       "async": true,
       "id": "App"
@@ -209,6 +209,6 @@
   },
   "sap.cloud": {
     "public": true,
-    "service": "eldoradocadastromotorista"
+    "service": "cadastromotoristafornecedor"
   }
 }

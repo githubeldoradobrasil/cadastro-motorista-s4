@@ -1,4 +1,4 @@
-<mvc:View controllerName="eldorado.cadastromotorista.controller.Master"
+<mvc:View controllerName="cadastromotorista_fornecedor.controller.Master"
 	xmlns="sap.m"
 	xmlns:mvc="sap.ui.core.mvc"
 	xmlns:core="sap.ui.core"

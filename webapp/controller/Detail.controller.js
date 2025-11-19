@@ -20,7 +20,7 @@ sap.ui.define([
 ], function (BaseController, JSONModel, formatter, mobileLibrary, File, MessageBox, Fragment, Dialog, MessageItem, MessageView, MessageToast,Button,Bar,Title,IconPool,coreLibrary) {
 	"use strict";
 
-	return BaseController.extend("eldorado.cadastromotorista.controller.Detail", {
+	return BaseController.extend("cadastromotorista_fornecedor.controller.Detail", {
 
 		formatter: formatter,
 
@@ -1034,7 +1034,7 @@ sap.ui.define([
 			if (!this._pViewSettingsDialog) {
 				this._pViewSettingsDialog = Fragment.load({
 					id: this.getView().getId(),
-					name: "eldorado.cadastromotorista.view.FileCategory",
+					name: "cadastromotorista_fornecedor.view.FileCategory",
 					controller: this
 				}).then(function (oDialog) {
 					// connect dialog to the root view of this component (models, lifecycle)
@@ -1117,8 +1117,8 @@ sap.ui.define([
 		},
 
 		getValuesComboBox: function (sPath) {
-			if ((this.getView().getViewName() === "eldorado.cadastromotorista.view.Driver") ||
-				this.getView().getViewName() === "eldorado.cadastromotorista.view.DriverEdit") {
+			if ((this.getView().getViewName() === "cadastromotorista_fornecedor.view.Driver") ||
+				this.getView().getViewName() === "cadastromotorista_fornecedor.view.DriverEdit") {
 				return Promise.all([
 					this._promiseEstado(),
 					this._promiseQualificacao(),
@@ -1126,8 +1126,8 @@ sap.ui.define([
 					this._promiseFuncao(),
 					this._promiseMotivacao()
 				])
-			} else if ((this.getView().getViewName() === "eldorado.cadastromotorista.view.Documents") ||
-				this.getView().getViewName() === "eldorado.cadastromotorista.view.DocumentsEdit") {
+			} else if ((this.getView().getViewName() === "cadastromotorista_fornecedor.view.Documents") ||
+				this.getView().getViewName() === "cadastromotorista_fornecedor.view.DocumentsEdit") {
 				return Promise.all([
 					this._promiseTipoDocumentoEstrangeiro()
 				])
@@ -1151,7 +1151,7 @@ sap.ui.define([
 
 			if (!Estado) {
 				let _resultEstado;
-				if (sViewDocuments == "eldorado.cadastromotorista.view.DriverEdit") {
+				if (sViewDocuments == "cadastromotorista_fornecedor.view.DriverEdit") {
 					_resultEstado = { idCampo: 'cbEstado', descricao: '' }
 				} else {
 					_resultEstado = { idCampo: 'IdEstado', descricao: '' }
@@ -1163,7 +1163,7 @@ sap.ui.define([
 			this.getModel().read("/SH_EstadosSet(Estado='" + Estado + "')", {
 				success: function (oData) {
 					let _resultEstado;
-					if (sViewDocuments == "eldorado.cadastromotorista.view.DriverEdit") {
+					if (sViewDocuments == "cadastromotorista_fornecedor.view.DriverEdit") {
 						_resultEstado = { idCampo: 'cbEstado', descricao: (oData.Descricao !== '') ? oData.Descricao : '' }
 					} else {
 						_resultEstado = { idCampo: 'IdEstado', descricao: (oData.Descricao !== '') ? oData.Descricao : '' }
@@ -1195,7 +1195,7 @@ sap.ui.define([
 
 			if (!Qualificacao) {
 				let _resultQualificacao;
-				if (sViewDocuments == "eldorado.cadastromotorista.view.DriverEdit") {
+				if (sViewDocuments == "cadastromotorista_fornecedor.view.DriverEdit") {
 					_resultQualificacao = { idCampo: 'cbQualificacao', descricao: '' }
 				} else {
 					_resultQualificacao = { idCampo: 'IdQualificacao', descricao: '' }
@@ -1207,7 +1207,7 @@ sap.ui.define([
 			this.getModel().read("/SH_QualificacaoSet(Id='" + Qualificacao + "')", {
 				success: function (oData) {
 					let _resultQualificacao;
-					if (sViewDocuments == "eldorado.cadastromotorista.view.DriverEdit") {
+					if (sViewDocuments == "cadastromotorista_fornecedor.view.DriverEdit") {
 						_resultQualificacao = { idCampo: 'cbQualificacao', descricao: (oData.Descricao !== '') ? oData.Descricao : '' }
 					} else {
 						_resultQualificacao = { idCampo: 'IdQualificacao', descricao: (oData.Descricao !== '') ? oData.Descricao : '' }
@@ -1238,7 +1238,7 @@ sap.ui.define([
 
 			if (!Area) {
 				let _resultArea;
-				if (sViewDocuments == "eldorado.cadastromotorista.view.DriverEdit") {
+				if (sViewDocuments == "cadastromotorista_fornecedor.view.DriverEdit") {
 					_resultArea = { idCampo: 'cbArea', descricao: '' }
 				} else {
 					_resultArea = { idCampo: 'IdArea', descricao: '' }
@@ -1250,7 +1250,7 @@ sap.ui.define([
 			this.getModel().read("/SH_AreaSet(Id='" + Area + "')", {
 				success: function (oData) {
 					let _resultArea;
-					if (sViewDocuments == "eldorado.cadastromotorista.view.DriverEdit") {
+					if (sViewDocuments == "cadastromotorista_fornecedor.view.DriverEdit") {
 						_resultArea = { idCampo: 'cbArea', descricao: (oData.Descricao !== '') ? oData.Descricao : '' }
 					} else {
 						_resultArea = { idCampo: 'IdArea', descricao: (oData.Descricao !== '') ? oData.Descricao : '' }
@@ -1281,7 +1281,7 @@ sap.ui.define([
 
 			if (!Funcao) {
 				let _resultFuncao;
-				if (sViewDocuments == "eldorado.cadastromotorista.view.DriverEdit") {
+				if (sViewDocuments == "cadastromotorista_fornecedor.view.DriverEdit") {
 					_resultFuncao = { idCampo: 'cbFuncao', descricao: '' }
 				} else {
 					_resultFuncao = { idCampo: 'IdFuncao', descricao: '' }
@@ -1293,7 +1293,7 @@ sap.ui.define([
 			this.getModel().read("/SH_FuncaoSet(Id='" + Funcao + "')", {
 				success: function (oData) {
 					let _resultFuncao;
-					if (sViewDocuments == "eldorado.cadastromotorista.view.DriverEdit") {
+					if (sViewDocuments == "cadastromotorista_fornecedor.view.DriverEdit") {
 						_resultFuncao = { idCampo: 'cbFuncao', descricao: (oData.Descricao !== '') ? oData.Descricao : '' }
 					} else {
 						_resultFuncao = { idCampo: 'IdFuncao', descricao: (oData.Descricao !== '') ? oData.Descricao : '' }
@@ -1324,7 +1324,7 @@ sap.ui.define([
 
 			if (!Motivacao) {
 				let _resultMotivacao;
-				if (sViewDocuments == "eldorado.cadastromotorista.view.DriverEdit") {
+				if (sViewDocuments == "cadastromotorista_fornecedor.view.DriverEdit") {
 					_resultMotivacao = { idCampo: 'cbMotivacao', descricao: '' }
 				} else {
 					_resultMotivacao = { idCampo: 'IdMotivacao', descricao: '' }
@@ -1336,7 +1336,7 @@ sap.ui.define([
 			this.getModel().read("/SH_MotivacaoSet(Id='" + Motivacao + "')", {
 				success: function (oData) {
 					let _resultMotivacao;
-					if (sViewDocuments == "eldorado.cadastromotorista.view.DriverEdit") {
+					if (sViewDocuments == "cadastromotorista_fornecedor.view.DriverEdit") {
 						_resultMotivacao = { idCampo: 'cbMotivacao', descricao: (oData.Descricao !== '') ? oData.Descricao : '' }
 					} else {
 						_resultMotivacao = { idCampo: 'IdMotivacao', descricao: (oData.Descricao !== '') ? oData.Descricao : '' }
@@ -1367,7 +1367,7 @@ sap.ui.define([
 
 			if (!TipoDocumentoEstrangeiro) {
 				let _resultTipoDocEstrangeiro;
-				if (sViewDocuments == "eldorado.cadastromotorista.view.DriverEdit") {
+				if (sViewDocuments == "cadastromotorista_fornecedor.view.DriverEdit") {
 					_resultTipoDocEstrangeiro = { idCampo: 'cbTipoDocumentoEstrangeiro', descricao: '' }
 				} else {
 					_resultTipoDocEstrangeiro = { idCampo: 'IdTipoDocumentoEstrangeiro', descricao: '' }
@@ -1379,7 +1379,7 @@ sap.ui.define([
 			this.getModel().read("/SH_TipoDocEstrangeiroSet(Id='" + TipoDocumentoEstrangeiro + "')", {
 				success: function (oData) {
 					let _resultTipoDocEstrangeiro;
-					if (sViewDocuments == "eldorado.cadastromotorista.view.DocumentsEdit") {
+					if (sViewDocuments == "cadastromotorista_fornecedor.view.DocumentsEdit") {
 						_resultTipoDocEstrangeiro = { idCampo: 'cbTipoDocumentoEstrangeiro', descricao: (oData.Descricao !== '') ? oData.Descricao : '' }
 					} else {
 						_resultTipoDocEstrangeiro = { idCampo: 'IdTipoDocumentoEstrangeiro', descricao: (oData.Descricao !== '') ? oData.Descricao : '' }

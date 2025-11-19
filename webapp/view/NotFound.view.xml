@@ -1,5 +1,5 @@
 <mvc:View
-	controllerName="eldorado.cadastromotorista.controller.NotFound"
+	controllerName="cadastromotorista_fornecedor.controller.NotFound"
 	xmlns="sap.m"
 	xmlns:mvc="sap.ui.core.mvc">
 	<Page

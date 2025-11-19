@@ -3,7 +3,7 @@ sap.ui.define([
 ], function (BaseController) {
 	"use strict";
 
-	return BaseController.extend("eldorado.cadastromotorista.controller.NotFound", {
+	return BaseController.extend("cadastromotorista_fornecedor.controller.NotFound", {
 
 		onInit: function () {
 			this.getRouter().getTarget("notFound").attachDisplay(this._onNotFoundDisplayed, this);

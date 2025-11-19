@@ -8,7 +8,7 @@ sap.ui.define([
     function (UIComponent, Device, models, ListSelector, ErrorHandler) {
         "use strict";
 
-        return UIComponent.extend("eldorado.cadastromotorista.Component", {
+        return UIComponent.extend("cadastromotorista_fornecedor.Component", {
             metadata: {
                 manifest: "json"
             },

@@ -1,4 +1,4 @@
-<mvc:View controllerName="eldorado.cadastromotorista.controller.App"
+<mvc:View controllerName="cadastromotorista_fornecedor.controller.App"
     xmlns:html="http://www.w3.org/1999/xhtml"
 	displayBlock="true"
 	height="100%"

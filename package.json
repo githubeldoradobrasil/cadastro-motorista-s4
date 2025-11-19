@@ -1,5 +1,5 @@
 {
-	"name": "eldorado.cadastromotorista",
+	"name": "cadastromotorista_fornecedor",
 	"version": "0.0.1",
 	"private": true,
 	"sapuxLayer": "CUSTOMER_BASE",
@@ -21,7 +21,7 @@
 		"start-mock": "fiori run --open \"test/flpSandboxMockServer.html?sap-ui-xx-viewCache=false#Motorista-display\"",
 		"build:cf": "ui5 build preload --clean-dest --config ui5-deploy.yaml --include-task=generateCachebusterInfo",
 		"build:mta": "rimraf resources mta_archives && mbt build",
-		"undeploy": "cf undeploy eldoradocadastromotorista --delete-services --delete-service-keys --delete-service-brokers"
+		"undeploy": "cf undeploy cadastromotoristafornecedor --delete-services --delete-service-keys --delete-service-brokers"
 	},
 	"devDependencies": {
 		"@ui5/cli": "^3.0.0",
